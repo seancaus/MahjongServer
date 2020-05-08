@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<MahjongServer_33aee9e4>",
+            "request": "launch",
+            "mainClass": "com.sean.App",
+            "projectName": "MahjongServer_33aee9e4"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MessageManager<MahjongServer_33aee9e4>",
+            "request": "launch",
+            "mainClass": "com.sean.server.MessageManager",
+            "projectName": "MahjongServer_33aee9e4"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<MahjongServer>",
+            "request": "launch",
+            "mainClass": "com.sean.App",
+            "projectName": "MahjongServer"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MessageManager<MahjongServer>",
+            "request": "launch",
+            "mainClass": "com.sean.server.MessageManager",
+            "projectName": "MahjongServer"
+        }
+    ]
+}

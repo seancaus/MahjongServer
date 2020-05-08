@@ -1,0 +1,7 @@
+packer:
+  # 更新包路径配置 {}程序会动态替换 目前只支持major、minor、release
+  iosPath: C:/Users/huxf/Downloads/lepai/104/v{major}.{minor}.{release}/upd/
+  androidPath: C:/Users/huxf/Downloads/lepai/0/v{release}/upd/
+  gamePath: C:/Users/huxf/Downloads/lepai/upd/games/
+  # 临时目录 用于解压缩
+  tempPath: C:/Users/huxf/Downloads/lepai/tmp

@@ -1,0 +1,29 @@
+server:
+  port: 8013
+
+spring:
+  mail:
+    host: smtp.163.com
+    username: zivhoo@163.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+
+        starttls:
+          enable: true
+          required: true
+
+  thymeleaf:
+    cache: false
+    mode: HTML5
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    check-template-location: true
+    suffix: .html
+    servlet:
+      content-type: text/html
+
+debug: true
+
