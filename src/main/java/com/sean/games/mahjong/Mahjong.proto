@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.sean.games.mahjong;
+
+// option java_outer_classname
+
+
+
+message Message
+{
+
+}
+

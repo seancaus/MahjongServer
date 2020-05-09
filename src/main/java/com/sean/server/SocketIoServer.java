@@ -45,6 +45,12 @@ public class SocketIoServer  extends Server{
                 client.sendMessage("hello");
             }
         });
+        server.addEventListener("message", String.class, new DataListener<String>() {
+            public void onData(SocketIOClient client, String data, AckRequest ackSender) {
+                System.out.println(data);
+                client.sendMessage("hello");
+            }
+        });
         // server.addJsonObjectListener(clazz, listener);
 
         server.start();
