@@ -1,0 +1,46 @@
+syntax="proto3";
+
+package com.ziv.lobby;
+
+//option java_package = "com.ziv.lobby.proto";
+option java_outer_classname = "Lobby";
+
+message Message{
+    oneof Msg{
+        Login   login = 1;
+        Logout logout = 2;
+        Event   event = 3;
+    }
+}
+
+message Player{
+    int32 id       = 1;
+    string name    = 2;
+}
+
+message Login{
+    Player player = 1;
+}
+
+// 退出｜被踢下线
+message Logout{
+    Player player = 1;
+}
+
+// 通知 例：错误，公告
+message Notification{
+    int32 id    = 1;
+    string data = 2;
+}
+
+// 客户端事件，例：进入大厅
+message Event{
+    int32 id    = 1;
+    string data = 2;
+}
+
+// 让客户端执行命令
+message Command{
+    int32 id    = 1;//命令代号
+    string data = 2;//命令内容
+}

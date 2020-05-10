@@ -13,6 +13,6 @@ public class MessageChannel extends ChannelInitializer<SocketChannel> {
         ChannelPipeline p = ch.pipeline();
 
         p.addLast(new PackDecoder());
-        p.addLast(new MessageManager());
+        p.addLast(new MessageCenter());
     }
 }

@@ -1,7 +1,12 @@
-package com.sean.games;
+package com.sean.games.mahjong;
+
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 
 public class Player {
     private String playerId;
+    private Map<Integer, Integer> cards = new Hashtable<>();
 
     public String getPlayerId() {
         return playerId;
@@ -10,5 +15,6 @@ public class Player {
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
     }
-    
+
+
 }

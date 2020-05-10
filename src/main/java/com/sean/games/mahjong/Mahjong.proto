@@ -11,3 +11,7 @@ message Message
 
 }
 
+message Deal
+{
+    int32[] cards = 1;
+}

@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class MessageManager extends ChannelInboundHandlerAdapter {
+public class MessageCenter extends ChannelInboundHandlerAdapter {
 
     public enum MsgType {
         FILE, XML, JSON,
@@ -180,6 +180,6 @@ public class MessageManager extends ChannelInboundHandlerAdapter {
 
     public static void main(String[] args) {
         String zipPath = "/Users/huxf/Downloads/abc.zip";
-        MessageManager.extract(zipPath, 3, 1, 0, 12, "hall", "ddz2","mj");
+        MessageCenter.extract(zipPath, 3, 1, 0, 12, "hall", "ddz2","mj");
     }
 }
