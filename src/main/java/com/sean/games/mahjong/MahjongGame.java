@@ -1,11 +1,14 @@
 package com.sean.games.mahjong;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import com.sean.games.SimpleGame;
@@ -15,11 +18,11 @@ import com.sean.games.SimpleGame;
 //Deal发牌，Die骰子，Draw摸牌,Discard打牌
 public class MahjongGame extends SimpleGame{
 
-    private int                 dealer; // 庄家
-    private int                 cur;    // 当前行牌玩家
+    private int                 dealerIndex; // 庄家 & 座位东
+    private int                 curIndex;    // 当前行牌玩家
     private List<Player>        players;// 东南西北玩家
 
-    private List<Integer>       dice;   // 掷骰数
+    private int[]               dices;  // 掷骰数
 
     private List<Define.Tile>   tiles;  // 麻将牌
     private List<Define.Tile>   walls;  // 麻将牌墙
@@ -27,10 +30,9 @@ public class MahjongGame extends SimpleGame{
     private Random random;
 
     public MahjongGame(){
-        cur     = 0;
-        dealer  = 0;
+        curIndex     = 0;
+        dealerIndex  = 0;
         random  = new Random();
-        dice    = new ArrayList<>();
         players = new ArrayList<>();
         walls   = new ArrayList<>(144);
     }
@@ -57,10 +59,13 @@ public class MahjongGame extends SimpleGame{
 
     }
 
-    // 洗牌&码牌
-    public void buildWalls(){
-        this.walls.clear();
+    // 洗牌
+    public void shufflingTiles(){
+    }
 
+    // 洗牌&码牌
+    public void stackTiles(){
+        this.walls.clear();
         List<Define.Tile> list = tiles.subList(0, tiles.size());
         Stream.generate(new Supplier<Integer>() {
             int size = list.size();
@@ -83,7 +88,11 @@ public class MahjongGame extends SimpleGame{
     }
 
     public void start(){
-
+        this.dices = throwDice(4);
+        int playerIndex = Arrays.stream(this.dices).limit(2).sum();
+        int index = (playerIndex + this.dealerIndex - 1) % 4; //开牌玩家
+        int stackIndex = Arrays.stream(this.dices).sum() + 1;
+        System.out.print(stackIndex);
     }
 
     // 检查听牌

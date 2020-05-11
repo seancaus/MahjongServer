@@ -14,6 +14,6 @@ public class AppTest {
         MahjongGame game = new MahjongGame();
 //        game.fillTiles();
 //        game.buildWalls();
-        game.throwDice(2);
+        game.start();
     }
 }
