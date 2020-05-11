@@ -7,7 +7,6 @@ import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-//import java.util.function.PersonSupplier;
 
 import com.sean.games.SimpleGame;
 
@@ -15,12 +14,15 @@ import com.sean.games.SimpleGame;
 //Dealer 庄家
 //Deal发牌，Die骰子，Draw摸牌,Discard打牌
 public class MahjongGame extends SimpleGame{
-    private List<Player>        players;
+
+    private int                 dealer; // 庄家
+    private int                 cur;    // 当前行牌玩家
+    private List<Player>        players;// 东南西北玩家
+
+    private List<Integer>       dice;   // 掷骰数
+
     private List<Define.Tile>   tiles;  // 麻将牌
     private List<Define.Tile>   walls;  // 麻将牌墙
-    private List<Integer>       dice;   // 骰子
-    private int                 dealer; // 庄家
-    private int                 cur;    // 当前玩家
 
     private Random random;
 
@@ -45,7 +47,17 @@ public class MahjongGame extends SimpleGame{
         tiles = Stream.of(Define.Tile.values()).flatMap(tile -> Arrays.stream(new Define.Tile[]{tile,tile,tile,tile})).collect(Collectors.toList());
     }
 
-    // 码牌
+    // 选择座位
+    public void chooseSeat(){
+
+    }
+
+    // 定庄
+    public void chooseDealer(){
+
+    }
+
+    // 洗牌&码牌
     public void buildWalls(){
         this.walls.clear();
 
@@ -61,9 +73,8 @@ public class MahjongGame extends SimpleGame{
     }
 
     // 掷骰子
-    public void throwDice(){
-        dice.clear();
-        random.ints(1,7).limit(4).forEach(n-> dice.add(n));
+    public int[] throwDice(int n){
+        return random.ints(1,7).limit(n).toArray();
     }
 
     // 发牌
