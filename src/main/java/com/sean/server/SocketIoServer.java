@@ -13,13 +13,10 @@ import org.springframework.stereotype.Component;
 
 // import io.socket.client.IO;
 
-@Component
-public class SocketIoServer  extends Server{
+@Component("SocketIoServer")
+public class SocketIoServer implements IServer{
 
-    @Value("${server.port}")
-    private int port = 8013;
-
-    public void start(){
+    public void start(int port){
         Configuration config = new Configuration();
         config.setHostname("localhost");
         config.setPort(port);

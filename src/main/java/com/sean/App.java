@@ -1,6 +1,6 @@
 package com.sean;
 
-import com.sean.server.Server;
+import com.sean.server.MessageCenter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,13 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App implements CommandLineRunner {
 
     @Autowired
-    private Server server;
+    private MessageCenter messageCenter;
     @Autowired
     private AppConfig appConfig;
 
     @Override
     public void run(String... args) throws Exception {
-        server.start();
+        messageCenter.run();
     }
 
     public static void main(String[] args) {

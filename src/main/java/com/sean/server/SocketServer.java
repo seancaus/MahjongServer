@@ -11,16 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-// @Component
-public class SocketServer extends Server{
-
-    @Value("${server.port}")
-    private int port = 8013;
+ @Component("SocketServer")
+public class SocketServer implements IServer{
 
     @Autowired
     private MessageChannel msgChannel;
 
-    public void start(){
+    public void start(int port){
         EventLoopGroup bossGroup = new NioEventLoopGroup(); // (1)
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
