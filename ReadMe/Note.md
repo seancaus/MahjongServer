@@ -1,0 +1,1 @@
+protoc --proto_path=src --java_out=./ Mahjong.proto -I ./
