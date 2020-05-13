@@ -77,8 +77,8 @@ public class MessageCenterOld extends ChannelInboundHandlerAdapter {
                     }
                 }
             } else {
-                Message m = ProtoManager.getInstance().getParser(msgType).parseFrom(d);
-                params.add(m);
+//                Message m = ProtoManager.getInstance().getParser(msgType).parseFrom(d);
+//                params.add(m);
             }
         }
         ReferenceCountUtil.release(msg);

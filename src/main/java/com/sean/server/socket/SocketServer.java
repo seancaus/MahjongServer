@@ -1,5 +1,6 @@
-package com.sean.server;
+package com.sean.server.socket;
 
+import com.sean.server.IServer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
@@ -8,11 +9,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
  @Component("SocketServer")
-public class SocketServer implements IServer{
+public class SocketServer implements IServer {
 
     @Autowired
     private MessageChannel msgChannel;

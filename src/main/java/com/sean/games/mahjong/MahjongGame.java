@@ -1,22 +1,21 @@
 package com.sean.games.mahjong;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.sean.games.SimpleGame;
+import com.sean.server.MessageHandler;
 
 // 每张牌都叫tile, 洗牌:mix the tiles，码牌:build walls，听牌:waiting，和牌:hu，自摸:self-drawn，点炮:win by discard.
 //Dealer 庄家
 //Deal发牌，Die骰子，Draw摸牌,Discard打牌
-public class MahjongGame extends SimpleGame{
+public class MahjongGame extends SimpleGame implements MessageHandler<MsgMahjong.Message> {
 
     private int                 dealerIndex; // 庄家 & 座位东
     private int                 curIndex;    // 当前行牌玩家
@@ -105,4 +104,15 @@ public class MahjongGame extends SimpleGame{
 
     }
 
+    @Override
+    public void handler(MsgMahjong.Message msg) {
+        switch (msg.getDataCase()){
+            case JOINREQUEST:{
+                msg.getJoinRequest();
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }

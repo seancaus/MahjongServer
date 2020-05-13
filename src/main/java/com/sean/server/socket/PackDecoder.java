@@ -1,4 +1,4 @@
-package com.sean.server;
+package com.sean.server.socket;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
