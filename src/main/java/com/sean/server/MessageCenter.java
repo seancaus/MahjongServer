@@ -16,8 +16,6 @@ public class MessageCenter {
     private IServer server;
 
     public void run(){
-
-
         this.start();
     }
 

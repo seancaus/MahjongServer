@@ -46,7 +46,11 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile group: 'net.lingala.zip4j', name:'zip4j', version:'2.0.3'
 
-    compile group: 'com.corundumstudio.socketio', name: 'netty-socketio', version: '1.5.0'
+// vscode false，creator 模拟器 true
+    // compile group: 'com.corundumstudio.socketio', name: 'netty-socketio', version: '1.5.0'
+
+    // vscode true，creator 模拟器 false
+    compile group: 'com.corundumstudio.socketio', name: 'netty-socketio', version: '1.7.17'
 }
 
 application {

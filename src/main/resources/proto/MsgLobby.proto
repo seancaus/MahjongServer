@@ -1,9 +1,6 @@
 syntax="proto3";
 
-package com.ziv.lobby;
-
-//option java_package = "com.ziv.lobby.proto";
-option java_outer_classname = "Lobby";
+package com.sean.lobby;
 
 message Message{
     oneof Msg{

@@ -1,13 +1,13 @@
-package com.sean.games.mahjong;
-
 syntax = "proto3";
+
+package com.sean.games.mahjong;
 
 message Message
 {
     oneof data
     {
-        JoinRequest joinRequest = 1;
-        JoinResponse joinResponse = 2;
+        JoinRequest joinRequest     = 1;
+        JoinResponse joinResponse   = 2;
     }
 }
 
