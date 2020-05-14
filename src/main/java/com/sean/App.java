@@ -1,5 +1,6 @@
 package com.sean;
 
+import com.sean.hall.HallManager;
 import com.sean.server.MessageCenter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App implements CommandLineRunner {
 
     @Autowired
-    private MessageCenter messageCenter;
-    @Autowired
     private AppConfig appConfig;
+
+    @Autowired
+    HallManager hm;
 
     @Override
     public void run(String... args) throws Exception {
-        messageCenter.run();
+        hm.run();
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.sean.hall.room;
+
+message Message
+{
+    oneof Msg
+    {
+        JoinRequest joinRequest     = 1;
+        JoinResponse joinResponse   = 2;
+        LeaveRequest LeaveRequest   = 3;
+        LeaveResponse LeaveResponse = 4;
+    }
+}
+
+message JoinRequest
+{
+    int32 playerId  = 1;
+    int32 roomId    = 2;
+}
+
+message JoinResponse
+{
+    int32 code = 1;
+    int32 seat = 2;
+}
+
+message LeaveRequest
+{
+    int32 playerId  = 1;
+    int32 roomId    = 2;
+}
+
+message LeaveResponse
+{
+    int32 code = 1;
+}
+
+enum Seat
+{
+    EAST    = 0;
+    SOUTH   = 1;
+    WEST    = 2;
+    NORTH   = 3;
+}

@@ -16,11 +16,6 @@ public class MessageCenter {
     private IServer server;
 
     public void run(){
-        this.start();
-    }
-
-    private void start(){
         server.start(port);
     }
-
 }

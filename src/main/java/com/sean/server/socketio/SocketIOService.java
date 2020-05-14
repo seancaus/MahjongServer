@@ -15,7 +15,7 @@ public class SocketIOService {
 
     @Autowired
     private ServerEvent event;
-    
+
     @OnConnect
     public void onConnect(SocketIOClient client) {
         System.out.println("User: " + client.getSessionId() + " Connected");

@@ -1,12 +1,12 @@
 syntax="proto3";
 
-package com.sean.lobby;
+package com.sean.hall.basic;
 
 message Message{
     oneof Msg{
-        Login   login = 1;
-        Logout logout = 2;
-        Event   event = 3;
+        Login   login   = 1;
+        Logout  logout  = 2;
+        Event   event   = 3;
     }
 }
 
@@ -40,4 +40,10 @@ message Event{
 message Command{
     int32 id    = 1;//命令代号
     string data = 2;//命令内容
+}
+
+// 错误码和json文件映射,用于无需处理错误，只弹出错误消息情况
+message Error
+{
+    int32 code = 1;
 }
