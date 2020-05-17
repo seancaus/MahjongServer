@@ -1,16 +1,15 @@
 package com.sean.games.mahjong;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.google.protobuf.Parser;
 import com.sean.games.SimpleGame;
 import com.sean.games.mahjong.MsgMahjong.Message;
-import com.sean.server.MessageHandler;
+import com.sean.hall.room.MsgRoom;
+import com.sean.server.IMessageHandler;
 import com.sean.server.MessageManager;
 
 import org.springframework.stereotype.Component;
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Component;
 //Dealer 庄家
 //Deal发牌，Die骰子，Draw摸牌,Discard打牌
 @Component
-public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
+public class MahjongGame extends SimpleGame implements IMessageHandler<Message> {
 
     private int dealerIndex; // 庄家 & 座位东
     private int curIndex; // 当前行牌玩家
@@ -38,14 +37,6 @@ public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
         random = new Random();
         players = new ArrayList<>();
         walls = new ArrayList<>(144);
-    }
-
-    public void join(Player p) {
-        players.add(p);
-    }
-
-    public void leave(Player p) {
-        players.remove(p);
     }
 
     public void fillTiles() {
@@ -123,8 +114,12 @@ public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
         }
     }
 
+    public Map<Integer, Parser<MsgRoom.Message>> messageMapping(){
+        return new Hashtable<Integer, Parser<MsgRoom.Message>>(){};
+    }
+
     @Override
     public void prepare() {
-        MessageManager.getInstance().register(0, Message.parser(), this);
+        MessageManager.getInstance().register(1000, Message.parser(), this);
     }
 }

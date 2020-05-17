@@ -1,12 +1,8 @@
 package com.sean.games;
 
-public abstract class SimpleGame implements IGame {
+import com.sean.hall.IHallModule;
 
-    @Override
-    public void prepare() {
-        // TODO Auto-generated method stub
-
-    }
+public abstract class SimpleGame implements /*IHallModule*/ IGame {
 
     @Override
     public void start() {

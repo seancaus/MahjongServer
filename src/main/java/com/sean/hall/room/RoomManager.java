@@ -3,18 +3,20 @@ package com.sean.hall.room;
 import java.util.Hashtable;
 import java.util.Map;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.Parser;
 import com.sean.hall.IHallModule;
 import com.sean.hall.room.MsgRoom.JoinRequest;
 import com.sean.hall.room.MsgRoom.JoinResponse;
 import com.sean.hall.room.MsgRoom.LeaveRequest;
 import com.sean.hall.room.MsgRoom.Message;
-import com.sean.server.MessageHandler;
+import com.sean.server.IMessageHandler;
 import com.sean.server.MessageManager;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class RoomManager implements IHallModule, MessageHandler<Message> {
+public class RoomManager implements IHallModule, IMessageHandler<Message> {
     private Map<Integer, Room> roomMap = new Hashtable<>();
 
     public void createRoom()
@@ -36,6 +38,10 @@ public class RoomManager implements IHallModule, MessageHandler<Message> {
 //        client.sendEvent("message", msg);
             return;
         }
+
+        Room r = roomMap.get(rid);
+        r.pushPlayer(String.valueOf(req.getPlayerId()));
+
     }
 
     public void leave(LeaveRequest req)
@@ -49,20 +55,19 @@ public class RoomManager implements IHallModule, MessageHandler<Message> {
     }
 
     @Override
-    public void prepare()
-    {
-        MessageManager.getInstance().register(0, Message.parser(), this);
+    public Map<Integer, Parser<Message>> messageMapping() {
+        return ImmutableMap.of(Integer.valueOf(1),Message.parser());
     }
 
     @Override
     public void handler(Message msg) {
         switch(msg.getMsgCase()){
-            case JOINRESPONSE:
+            case JOINREQUEST:
             {
                 join(msg.getJoinRequest());
                 break;
             }
-            case LEAVERESPONSE:
+            case LEAVEREQUEST:
             {
                 leave(msg.getLeaveRequest());
                 break;
