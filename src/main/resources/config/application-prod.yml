@@ -26,4 +26,3 @@ spring:
       content-type: text/html
 
 debug: true
-

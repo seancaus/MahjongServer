@@ -6,11 +6,23 @@ message Message
 {
     oneof Msg
     {
-        JoinRequest joinRequest     = 1;
-        JoinResponse joinResponse   = 2;
-        LeaveRequest LeaveRequest   = 3;
-        LeaveResponse LeaveResponse = 4;
+        LoginRequest loginRequest       = 1;
+        LoginResponse loginResponse     = 2;
+        JoinRequest joinRequest         = 3;
+        JoinResponse joinResponse       = 4;
+        LeaveRequest LeaveRequest       = 5;
+        LeaveResponse LeaveResponse     = 6;
     }
+}
+
+message LoginRequest
+{
+    int32 xx = 1;
+}
+
+message LoginResponse
+{
+    string name = 1;
 }
 
 message JoinRequest

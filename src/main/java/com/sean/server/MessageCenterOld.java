@@ -1,7 +1,7 @@
 package com.sean.server;
 
 import com.google.protobuf.Message;
-import com.sean.packer.proto.Packer;
+// import com.sean.packer.proto.Packer;
 import com.sean.utils.TextUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -90,9 +90,9 @@ public class MessageCenterOld extends ChannelInboundHandlerAdapter {
 
     }
 
-    protected void handler(File f, Packer.Message msg) {
+    // protected void handler(File f, Packer.Message msg) {
 
-    }
+    // }
 
     private void handlerFile(String fpath, byte[] data) {
         FileOutputStream fos = null;

@@ -3,15 +3,17 @@ package com.sean.games.mahjong;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.Parser;
 import com.sean.games.SimpleGame;
 import com.sean.games.mahjong.MsgMahjong.Message;
-import com.sean.server.MessageHandler;
-import com.sean.server.MessageManager;
+import com.sean.server.IMessageHandler;
 
 import org.springframework.stereotype.Component;
 
@@ -19,7 +21,7 @@ import org.springframework.stereotype.Component;
 //Dealer 庄家
 //Deal发牌，Die骰子，Draw摸牌,Discard打牌
 @Component
-public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
+public class MahjongGame extends SimpleGame implements IMessageHandler<Message> {
 
     private int dealerIndex; // 庄家 & 座位东
     private int curIndex; // 当前行牌玩家
@@ -112,7 +114,7 @@ public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
     }
 
     @Override
-    public void handler(Message msg) {
+    public void handle(Message msg) {
         switch (msg.getDataCase()) {
             case DEAL: {
                 msg.getDeal();
@@ -124,7 +126,9 @@ public class MahjongGame extends SimpleGame implements MessageHandler<Message> {
     }
 
     @Override
-    public void prepare() {
-        MessageManager.getInstance().register(0, Message.parser(), this);
+    public Map<Integer, Parser<? extends com.google.protobuf.Message>> messageMapping() {
+        return ImmutableMap.of(Integer.valueOf(1000), Message.parser());
+        // return null;
     }
+
 }
