@@ -2,7 +2,6 @@ package com.sean.hall;
 
 import java.util.List;
 
-import com.sean.server.IMessageHandler;
 import com.sean.server.MessageCenter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,8 @@ public class HallManager {
     private MessageCenter msgCenter;
 
     private void prepare(){
-        modules.stream().filter((m)->m instanceof IMessageHandler);
         modules.forEach((module)->{
-            if(module instanceof IMessageHandler){
-
-            }
+            module.prepare();
         });
     }
 

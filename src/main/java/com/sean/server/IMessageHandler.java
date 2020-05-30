@@ -1,11 +1,11 @@
 package com.sean.server;
 
+import java.util.Map;
+
 import com.google.protobuf.Message;
 import com.google.protobuf.Parser;
 
-import java.util.Map;
-
 public interface IMessageHandler<T extends Message> {
-    <T extends Message> Map<Integer, Parser<T>> messageMapping();
-    void handler(T msg);
+    Map<Integer,Parser<? extends Message>> messageMapping();
+    void handle(T msg);
 }

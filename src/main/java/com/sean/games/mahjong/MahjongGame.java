@@ -1,16 +1,19 @@
 package com.sean.games.mahjong;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Parser;
 import com.sean.games.SimpleGame;
 import com.sean.games.mahjong.MsgMahjong.Message;
-import com.sean.hall.room.MsgRoom;
 import com.sean.server.IMessageHandler;
-import com.sean.server.MessageManager;
 
 import org.springframework.stereotype.Component;
 
@@ -37,6 +40,14 @@ public class MahjongGame extends SimpleGame implements IMessageHandler<Message> 
         random = new Random();
         players = new ArrayList<>();
         walls = new ArrayList<>(144);
+    }
+
+    public void join(Player p) {
+        players.add(p);
+    }
+
+    public void leave(Player p) {
+        players.remove(p);
     }
 
     public void fillTiles() {
@@ -103,7 +114,7 @@ public class MahjongGame extends SimpleGame implements IMessageHandler<Message> 
     }
 
     @Override
-    public void handler(Message msg) {
+    public void handle(Message msg) {
         switch (msg.getDataCase()) {
             case DEAL: {
                 msg.getDeal();
@@ -114,12 +125,10 @@ public class MahjongGame extends SimpleGame implements IMessageHandler<Message> 
         }
     }
 
-    public Map<Integer, Parser<MsgRoom.Message>> messageMapping(){
-        return new Hashtable<Integer, Parser<MsgRoom.Message>>(){};
+    @Override
+    public Map<Integer, Parser<? extends com.google.protobuf.Message>> messageMapping() {
+        return ImmutableMap.of(Integer.valueOf(1000), Message.parser());
+        // return null;
     }
 
-    @Override
-    public void prepare() {
-        MessageManager.getInstance().register(1000, Message.parser(), this);
-    }
 }

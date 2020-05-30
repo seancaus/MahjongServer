@@ -28,6 +28,7 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.2-jre'
 
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
@@ -46,10 +47,10 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile group: 'net.lingala.zip4j', name:'zip4j', version:'2.0.3'
 
-// vscode false，creator 模拟器 true
+    // vscode false，creator模拟器 true
     // compile group: 'com.corundumstudio.socketio', name: 'netty-socketio', version: '1.5.0'
 
-    // vscode true，creator 模拟器 false
+    // vscode true，creator模拟器 false
     compile group: 'com.corundumstudio.socketio', name: 'netty-socketio', version: '1.7.17'
 }
 
