@@ -13,7 +13,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Parser;
 import com.sean.games.SimpleGame;
 import com.sean.games.mahjong.MsgMahjong.Message;
-import com.sean.server.IMessageHandler;
+import com.sean.core.IMessageHandler;
 
 import org.springframework.stereotype.Component;
 

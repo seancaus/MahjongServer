@@ -5,17 +5,17 @@ import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Parser;
-import com.sean.hall.IHallModule;
+import com.sean.hall.IModule;
 import com.sean.hall.room.MsgRoom.JoinRequest;
 import com.sean.hall.room.MsgRoom.JoinResponse;
 import com.sean.hall.room.MsgRoom.LeaveRequest;
 import com.sean.hall.room.MsgRoom.Message;
-import com.sean.server.IMessageHandler;
+import com.sean.core.IMessageHandler;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class RoomManager implements IHallModule, IMessageHandler<Message> {
+public class RoomManager implements IModule, IMessageHandler<Message> {
     private Map<Integer, Room> roomMap = new Hashtable<>();
 
     public void createRoom() {
@@ -63,6 +63,6 @@ public class RoomManager implements IHallModule, IMessageHandler<Message> {
 
     @Override
     public Map<Integer, Parser<? extends com.google.protobuf.Message>> messageMapping() {
-        return ImmutableMap.of(Integer.valueOf(1),Message.parser());
+        return ImmutableMap.of(Integer.valueOf(1), Message.parser());
     }
 }

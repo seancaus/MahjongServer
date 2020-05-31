@@ -1,7 +1,6 @@
 package com.sean;
 
 import com.sean.hall.HallManager;
-import com.sean.server.MessageCenter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

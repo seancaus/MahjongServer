@@ -1,1 +1,0 @@
-protoc --proto_path=src --java_out=./ *.proto -I ./

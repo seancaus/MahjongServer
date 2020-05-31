@@ -20,12 +20,10 @@ public final class MsgLobby {
 
     /**
      * <code>.com.sean.hall.basic.Login login = 1;</code>
-     * @return Whether the login field is set.
      */
     boolean hasLogin();
     /**
      * <code>.com.sean.hall.basic.Login login = 1;</code>
-     * @return The login.
      */
     com.sean.hall.basic.MsgLobby.Login getLogin();
     /**
@@ -35,12 +33,10 @@ public final class MsgLobby {
 
     /**
      * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-     * @return Whether the logout field is set.
      */
     boolean hasLogout();
     /**
      * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-     * @return The logout.
      */
     com.sean.hall.basic.MsgLobby.Logout getLogout();
     /**
@@ -50,12 +46,10 @@ public final class MsgLobby {
 
     /**
      * <code>.com.sean.hall.basic.Event event = 3;</code>
-     * @return Whether the event field is set.
      */
     boolean hasEvent();
     /**
      * <code>.com.sean.hall.basic.Event event = 3;</code>
-     * @return The event.
      */
     com.sean.hall.basic.MsgLobby.Event getEvent();
     /**
@@ -81,13 +75,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Message();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -100,6 +87,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -187,8 +175,7 @@ public final class MsgLobby {
     private int msgCase_ = 0;
     private java.lang.Object msg_;
     public enum MsgCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       LOGIN(1),
       LOGOUT(2),
       EVENT(3),
@@ -198,8 +185,6 @@ public final class MsgLobby {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -230,14 +215,12 @@ public final class MsgLobby {
     public static final int LOGIN_FIELD_NUMBER = 1;
     /**
      * <code>.com.sean.hall.basic.Login login = 1;</code>
-     * @return Whether the login field is set.
      */
     public boolean hasLogin() {
       return msgCase_ == 1;
     }
     /**
      * <code>.com.sean.hall.basic.Login login = 1;</code>
-     * @return The login.
      */
     public com.sean.hall.basic.MsgLobby.Login getLogin() {
       if (msgCase_ == 1) {
@@ -258,14 +241,12 @@ public final class MsgLobby {
     public static final int LOGOUT_FIELD_NUMBER = 2;
     /**
      * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-     * @return Whether the logout field is set.
      */
     public boolean hasLogout() {
       return msgCase_ == 2;
     }
     /**
      * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-     * @return The logout.
      */
     public com.sean.hall.basic.MsgLobby.Logout getLogout() {
       if (msgCase_ == 2) {
@@ -286,14 +267,12 @@ public final class MsgLobby {
     public static final int EVENT_FIELD_NUMBER = 3;
     /**
      * <code>.com.sean.hall.basic.Event event = 3;</code>
-     * @return Whether the event field is set.
      */
     public boolean hasEvent() {
       return msgCase_ == 3;
     }
     /**
      * <code>.com.sean.hall.basic.Event event = 3;</code>
-     * @return The event.
      */
     public com.sean.hall.basic.MsgLobby.Event getEvent() {
       if (msgCase_ == 3) {
@@ -710,14 +689,12 @@ public final class MsgLobby {
           com.sean.hall.basic.MsgLobby.Login, com.sean.hall.basic.MsgLobby.Login.Builder, com.sean.hall.basic.MsgLobby.LoginOrBuilder> loginBuilder_;
       /**
        * <code>.com.sean.hall.basic.Login login = 1;</code>
-       * @return Whether the login field is set.
        */
       public boolean hasLogin() {
         return msgCase_ == 1;
       }
       /**
        * <code>.com.sean.hall.basic.Login login = 1;</code>
-       * @return The login.
        */
       public com.sean.hall.basic.MsgLobby.Login getLogin() {
         if (loginBuilder_ == null) {
@@ -848,14 +825,12 @@ public final class MsgLobby {
           com.sean.hall.basic.MsgLobby.Logout, com.sean.hall.basic.MsgLobby.Logout.Builder, com.sean.hall.basic.MsgLobby.LogoutOrBuilder> logoutBuilder_;
       /**
        * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-       * @return Whether the logout field is set.
        */
       public boolean hasLogout() {
         return msgCase_ == 2;
       }
       /**
        * <code>.com.sean.hall.basic.Logout logout = 2;</code>
-       * @return The logout.
        */
       public com.sean.hall.basic.MsgLobby.Logout getLogout() {
         if (logoutBuilder_ == null) {
@@ -986,14 +961,12 @@ public final class MsgLobby {
           com.sean.hall.basic.MsgLobby.Event, com.sean.hall.basic.MsgLobby.Event.Builder, com.sean.hall.basic.MsgLobby.EventOrBuilder> eventBuilder_;
       /**
        * <code>.com.sean.hall.basic.Event event = 3;</code>
-       * @return Whether the event field is set.
        */
       public boolean hasEvent() {
         return msgCase_ == 3;
       }
       /**
        * <code>.com.sean.hall.basic.Event event = 3;</code>
-       * @return The event.
        */
       public com.sean.hall.basic.MsgLobby.Event getEvent() {
         if (eventBuilder_ == null) {
@@ -1178,18 +1151,15 @@ public final class MsgLobby {
 
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
     /**
      * <code>string name = 2;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -1211,13 +1181,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Player();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1230,6 +1193,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1287,7 +1251,6 @@ public final class MsgLobby {
     private int id_;
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     public int getId() {
       return id_;
@@ -1297,7 +1260,6 @@ public final class MsgLobby {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
-     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1313,7 +1275,6 @@ public final class MsgLobby {
     }
     /**
      * <code>string name = 2;</code>
-     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1651,15 +1612,12 @@ public final class MsgLobby {
       private int id_ ;
       /**
        * <code>int32 id = 1;</code>
-       * @return The id.
        */
       public int getId() {
         return id_;
       }
       /**
        * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
         
@@ -1669,7 +1627,6 @@ public final class MsgLobby {
       }
       /**
        * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1681,7 +1638,6 @@ public final class MsgLobby {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1697,7 +1653,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string name = 2;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1714,8 +1669,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1729,7 +1682,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string name = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1739,8 +1691,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1812,12 +1762,10 @@ public final class MsgLobby {
 
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return Whether the player field is set.
      */
     boolean hasPlayer();
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return The player.
      */
     com.sean.hall.basic.MsgLobby.Player getPlayer();
     /**
@@ -1841,13 +1789,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Login();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1860,6 +1801,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1919,14 +1861,12 @@ public final class MsgLobby {
     private com.sean.hall.basic.MsgLobby.Player player_;
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return Whether the player field is set.
      */
     public boolean hasPlayer() {
       return player_ != null;
     }
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return The player.
      */
     public com.sean.hall.basic.MsgLobby.Player getPlayer() {
       return player_ == null ? com.sean.hall.basic.MsgLobby.Player.getDefaultInstance() : player_;
@@ -2258,14 +2198,12 @@ public final class MsgLobby {
           com.sean.hall.basic.MsgLobby.Player, com.sean.hall.basic.MsgLobby.Player.Builder, com.sean.hall.basic.MsgLobby.PlayerOrBuilder> playerBuilder_;
       /**
        * <code>.com.sean.hall.basic.Player player = 1;</code>
-       * @return Whether the player field is set.
        */
       public boolean hasPlayer() {
         return playerBuilder_ != null || player_ != null;
       }
       /**
        * <code>.com.sean.hall.basic.Player player = 1;</code>
-       * @return The player.
        */
       public com.sean.hall.basic.MsgLobby.Player getPlayer() {
         if (playerBuilder_ == null) {
@@ -2430,12 +2368,10 @@ public final class MsgLobby {
 
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return Whether the player field is set.
      */
     boolean hasPlayer();
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return The player.
      */
     com.sean.hall.basic.MsgLobby.Player getPlayer();
     /**
@@ -2463,13 +2399,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Logout();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2482,6 +2411,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2541,14 +2471,12 @@ public final class MsgLobby {
     private com.sean.hall.basic.MsgLobby.Player player_;
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return Whether the player field is set.
      */
     public boolean hasPlayer() {
       return player_ != null;
     }
     /**
      * <code>.com.sean.hall.basic.Player player = 1;</code>
-     * @return The player.
      */
     public com.sean.hall.basic.MsgLobby.Player getPlayer() {
       return player_ == null ? com.sean.hall.basic.MsgLobby.Player.getDefaultInstance() : player_;
@@ -2884,14 +2812,12 @@ public final class MsgLobby {
           com.sean.hall.basic.MsgLobby.Player, com.sean.hall.basic.MsgLobby.Player.Builder, com.sean.hall.basic.MsgLobby.PlayerOrBuilder> playerBuilder_;
       /**
        * <code>.com.sean.hall.basic.Player player = 1;</code>
-       * @return Whether the player field is set.
        */
       public boolean hasPlayer() {
         return playerBuilder_ != null || player_ != null;
       }
       /**
        * <code>.com.sean.hall.basic.Player player = 1;</code>
-       * @return The player.
        */
       public com.sean.hall.basic.MsgLobby.Player getPlayer() {
         if (playerBuilder_ == null) {
@@ -3056,18 +2982,15 @@ public final class MsgLobby {
 
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
     /**
      * <code>string data = 2;</code>
-     * @return The data.
      */
     java.lang.String getData();
     /**
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     com.google.protobuf.ByteString
         getDataBytes();
@@ -3093,13 +3016,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Notification();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3112,6 +3028,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3169,7 +3086,6 @@ public final class MsgLobby {
     private int id_;
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     public int getId() {
       return id_;
@@ -3179,7 +3095,6 @@ public final class MsgLobby {
     private volatile java.lang.Object data_;
     /**
      * <code>string data = 2;</code>
-     * @return The data.
      */
     public java.lang.String getData() {
       java.lang.Object ref = data_;
@@ -3195,7 +3110,6 @@ public final class MsgLobby {
     }
     /**
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     public com.google.protobuf.ByteString
         getDataBytes() {
@@ -3537,15 +3451,12 @@ public final class MsgLobby {
       private int id_ ;
       /**
        * <code>int32 id = 1;</code>
-       * @return The id.
        */
       public int getId() {
         return id_;
       }
       /**
        * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
         
@@ -3555,7 +3466,6 @@ public final class MsgLobby {
       }
       /**
        * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -3567,7 +3477,6 @@ public final class MsgLobby {
       private java.lang.Object data_ = "";
       /**
        * <code>string data = 2;</code>
-       * @return The data.
        */
       public java.lang.String getData() {
         java.lang.Object ref = data_;
@@ -3583,7 +3492,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @return The bytes for data.
        */
       public com.google.protobuf.ByteString
           getDataBytes() {
@@ -3600,8 +3508,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @param value The data to set.
-       * @return This builder for chaining.
        */
       public Builder setData(
           java.lang.String value) {
@@ -3615,7 +3521,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -3625,8 +3530,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @param value The bytes for data to set.
-       * @return This builder for chaining.
        */
       public Builder setDataBytes(
           com.google.protobuf.ByteString value) {
@@ -3698,18 +3601,15 @@ public final class MsgLobby {
 
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
     /**
      * <code>string data = 2;</code>
-     * @return The data.
      */
     java.lang.String getData();
     /**
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     com.google.protobuf.ByteString
         getDataBytes();
@@ -3735,13 +3635,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Event();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3754,6 +3647,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3811,7 +3705,6 @@ public final class MsgLobby {
     private int id_;
     /**
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     public int getId() {
       return id_;
@@ -3821,7 +3714,6 @@ public final class MsgLobby {
     private volatile java.lang.Object data_;
     /**
      * <code>string data = 2;</code>
-     * @return The data.
      */
     public java.lang.String getData() {
       java.lang.Object ref = data_;
@@ -3837,7 +3729,6 @@ public final class MsgLobby {
     }
     /**
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     public com.google.protobuf.ByteString
         getDataBytes() {
@@ -4179,15 +4070,12 @@ public final class MsgLobby {
       private int id_ ;
       /**
        * <code>int32 id = 1;</code>
-       * @return The id.
        */
       public int getId() {
         return id_;
       }
       /**
        * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
         
@@ -4197,7 +4085,6 @@ public final class MsgLobby {
       }
       /**
        * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -4209,7 +4096,6 @@ public final class MsgLobby {
       private java.lang.Object data_ = "";
       /**
        * <code>string data = 2;</code>
-       * @return The data.
        */
       public java.lang.String getData() {
         java.lang.Object ref = data_;
@@ -4225,7 +4111,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @return The bytes for data.
        */
       public com.google.protobuf.ByteString
           getDataBytes() {
@@ -4242,8 +4127,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @param value The data to set.
-       * @return This builder for chaining.
        */
       public Builder setData(
           java.lang.String value) {
@@ -4257,7 +4140,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -4267,8 +4149,6 @@ public final class MsgLobby {
       }
       /**
        * <code>string data = 2;</code>
-       * @param value The bytes for data to set.
-       * @return This builder for chaining.
        */
       public Builder setDataBytes(
           com.google.protobuf.ByteString value) {
@@ -4344,7 +4224,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
@@ -4354,7 +4233,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>string data = 2;</code>
-     * @return The data.
      */
     java.lang.String getData();
     /**
@@ -4363,7 +4241,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     com.google.protobuf.ByteString
         getDataBytes();
@@ -4389,13 +4266,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Command();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -4408,6 +4278,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4469,7 +4340,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>int32 id = 1;</code>
-     * @return The id.
      */
     public int getId() {
       return id_;
@@ -4483,7 +4353,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>string data = 2;</code>
-     * @return The data.
      */
     public java.lang.String getData() {
       java.lang.Object ref = data_;
@@ -4503,7 +4372,6 @@ public final class MsgLobby {
      * </pre>
      *
      * <code>string data = 2;</code>
-     * @return The bytes for data.
      */
     public com.google.protobuf.ByteString
         getDataBytes() {
@@ -4849,7 +4717,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>int32 id = 1;</code>
-       * @return The id.
        */
       public int getId() {
         return id_;
@@ -4860,8 +4727,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
         
@@ -4875,7 +4740,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -4891,7 +4755,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>string data = 2;</code>
-       * @return The data.
        */
       public java.lang.String getData() {
         java.lang.Object ref = data_;
@@ -4911,7 +4774,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>string data = 2;</code>
-       * @return The bytes for data.
        */
       public com.google.protobuf.ByteString
           getDataBytes() {
@@ -4932,8 +4794,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>string data = 2;</code>
-       * @param value The data to set.
-       * @return This builder for chaining.
        */
       public Builder setData(
           java.lang.String value) {
@@ -4951,7 +4811,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>string data = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -4965,8 +4824,6 @@ public final class MsgLobby {
        * </pre>
        *
        * <code>string data = 2;</code>
-       * @param value The bytes for data to set.
-       * @return This builder for chaining.
        */
       public Builder setDataBytes(
           com.google.protobuf.ByteString value) {
@@ -5038,7 +4895,6 @@ public final class MsgLobby {
 
     /**
      * <code>int32 code = 1;</code>
-     * @return The code.
      */
     int getCode();
   }
@@ -5062,13 +4918,6 @@ public final class MsgLobby {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Error();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -5081,6 +4930,7 @@ public final class MsgLobby {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5132,7 +4982,6 @@ public final class MsgLobby {
     private int code_;
     /**
      * <code>int32 code = 1;</code>
-     * @return The code.
      */
     public int getCode() {
       return code_;
@@ -5447,15 +5296,12 @@ public final class MsgLobby {
       private int code_ ;
       /**
        * <code>int32 code = 1;</code>
-       * @return The code.
        */
       public int getCode() {
         return code_;
       }
       /**
        * <code>int32 code = 1;</code>
-       * @param value The code to set.
-       * @return This builder for chaining.
        */
       public Builder setCode(int value) {
         
@@ -5465,7 +5311,6 @@ public final class MsgLobby {
       }
       /**
        * <code>int32 code = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCode() {
         
@@ -5589,10 +5434,18 @@ public final class MsgLobby {
       "\n\004data\030\002 \001(\t\"\025\n\005Error\022\014\n\004code\030\001 \001(\005b\006pro" +
       "to3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_com_sean_hall_basic_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_sean_hall_basic_Message_fieldAccessorTable = new

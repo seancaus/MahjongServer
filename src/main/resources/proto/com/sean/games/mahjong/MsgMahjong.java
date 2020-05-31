@@ -65,8 +65,6 @@ public final class MsgMahjong {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -74,10 +72,6 @@ public final class MsgMahjong {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static Direction forNumber(int value) {
       switch (value) {
         case 0: return EAST;
@@ -142,12 +136,10 @@ public final class MsgMahjong {
 
     /**
      * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-     * @return Whether the deal field is set.
      */
     boolean hasDeal();
     /**
      * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-     * @return The deal.
      */
     com.sean.games.mahjong.MsgMahjong.Deal getDeal();
     /**
@@ -173,13 +165,6 @@ public final class MsgMahjong {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Message();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -192,6 +177,7 @@ public final class MsgMahjong {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -251,8 +237,7 @@ public final class MsgMahjong {
     private int dataCase_ = 0;
     private java.lang.Object data_;
     public enum DataCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       DEAL(1),
       DATA_NOT_SET(0);
       private final int value;
@@ -260,8 +245,6 @@ public final class MsgMahjong {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -290,14 +273,12 @@ public final class MsgMahjong {
     public static final int DEAL_FIELD_NUMBER = 1;
     /**
      * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-     * @return Whether the deal field is set.
      */
     public boolean hasDeal() {
       return dataCase_ == 1;
     }
     /**
      * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-     * @return The deal.
      */
     public com.sean.games.mahjong.MsgMahjong.Deal getDeal() {
       if (dataCase_ == 1) {
@@ -662,14 +643,12 @@ public final class MsgMahjong {
           com.sean.games.mahjong.MsgMahjong.Deal, com.sean.games.mahjong.MsgMahjong.Deal.Builder, com.sean.games.mahjong.MsgMahjong.DealOrBuilder> dealBuilder_;
       /**
        * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-       * @return Whether the deal field is set.
        */
       public boolean hasDeal() {
         return dataCase_ == 1;
       }
       /**
        * <code>.com.sean.games.mahjong.Deal deal = 1;</code>
-       * @return The deal.
        */
       public com.sean.games.mahjong.MsgMahjong.Deal getDeal() {
         if (dealBuilder_ == null) {
@@ -854,29 +833,23 @@ public final class MsgMahjong {
 
     /**
      * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-     * @return The enum numeric value on the wire for seat.
      */
     int getSeatValue();
     /**
      * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-     * @return The seat.
      */
     com.sean.games.mahjong.MsgMahjong.Direction getSeat();
 
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @return A list containing the cards.
      */
     java.util.List<java.lang.Integer> getCardsList();
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @return The count of cards.
      */
     int getCardsCount();
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @param index The index of the element to return.
-     * @return The cards at the given index.
      */
     int getCards(int index);
   }
@@ -899,13 +872,6 @@ public final class MsgMahjong {
     private Deal() {
       seat_ = 0;
       cards_ = emptyIntList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Deal();
     }
 
     @java.lang.Override
@@ -939,9 +905,9 @@ public final class MsgMahjong {
               break;
             }
             case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 cards_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               cards_.addInt(input.readInt32());
               break;
@@ -949,9 +915,9 @@ public final class MsgMahjong {
             case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 cards_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 cards_.addInt(input.readInt32());
@@ -974,7 +940,7 @@ public final class MsgMahjong {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           cards_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -994,18 +960,17 @@ public final class MsgMahjong {
               com.sean.games.mahjong.MsgMahjong.Deal.class, com.sean.games.mahjong.MsgMahjong.Deal.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SEAT_FIELD_NUMBER = 1;
     private int seat_;
     /**
      * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-     * @return The enum numeric value on the wire for seat.
      */
     public int getSeatValue() {
       return seat_;
     }
     /**
      * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-     * @return The seat.
      */
     public com.sean.games.mahjong.MsgMahjong.Direction getSeat() {
       @SuppressWarnings("deprecation")
@@ -1017,7 +982,6 @@ public final class MsgMahjong {
     private com.google.protobuf.Internal.IntList cards_;
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @return A list containing the cards.
      */
     public java.util.List<java.lang.Integer>
         getCardsList() {
@@ -1025,15 +989,12 @@ public final class MsgMahjong {
     }
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @return The count of cards.
      */
     public int getCardsCount() {
       return cards_.size();
     }
     /**
      * <code>repeated int32 cards = 2;</code>
-     * @param index The index of the element to return.
-     * @return The cards at the given index.
      */
     public int getCards(int index) {
       return cards_.getInt(index);
@@ -1267,7 +1228,7 @@ public final class MsgMahjong {
         seat_ = 0;
 
         cards_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1295,12 +1256,14 @@ public final class MsgMahjong {
       public com.sean.games.mahjong.MsgMahjong.Deal buildPartial() {
         com.sean.games.mahjong.MsgMahjong.Deal result = new com.sean.games.mahjong.MsgMahjong.Deal(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.seat_ = seat_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           cards_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.cards_ = cards_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1355,7 +1318,7 @@ public final class MsgMahjong {
         if (!other.cards_.isEmpty()) {
           if (cards_.isEmpty()) {
             cards_ = other.cards_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCardsIsMutable();
             cards_.addAll(other.cards_);
@@ -1395,15 +1358,12 @@ public final class MsgMahjong {
       private int seat_ = 0;
       /**
        * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-       * @return The enum numeric value on the wire for seat.
        */
       public int getSeatValue() {
         return seat_;
       }
       /**
        * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-       * @param value The enum numeric value on the wire for seat to set.
-       * @return This builder for chaining.
        */
       public Builder setSeatValue(int value) {
         seat_ = value;
@@ -1412,7 +1372,6 @@ public final class MsgMahjong {
       }
       /**
        * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-       * @return The seat.
        */
       public com.sean.games.mahjong.MsgMahjong.Direction getSeat() {
         @SuppressWarnings("deprecation")
@@ -1421,8 +1380,6 @@ public final class MsgMahjong {
       }
       /**
        * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-       * @param value The seat to set.
-       * @return This builder for chaining.
        */
       public Builder setSeat(com.sean.games.mahjong.MsgMahjong.Direction value) {
         if (value == null) {
@@ -1435,7 +1392,6 @@ public final class MsgMahjong {
       }
       /**
        * <code>.com.sean.games.mahjong.Direction seat = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearSeat() {
         
@@ -1446,40 +1402,33 @@ public final class MsgMahjong {
 
       private com.google.protobuf.Internal.IntList cards_ = emptyIntList();
       private void ensureCardsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           cards_ = mutableCopy(cards_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @return A list containing the cards.
        */
       public java.util.List<java.lang.Integer>
           getCardsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(cards_) : cards_;
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @return The count of cards.
        */
       public int getCardsCount() {
         return cards_.size();
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @param index The index of the element to return.
-       * @return The cards at the given index.
        */
       public int getCards(int index) {
         return cards_.getInt(index);
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The cards to set.
-       * @return This builder for chaining.
        */
       public Builder setCards(
           int index, int value) {
@@ -1490,8 +1439,6 @@ public final class MsgMahjong {
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @param value The cards to add.
-       * @return This builder for chaining.
        */
       public Builder addCards(int value) {
         ensureCardsIsMutable();
@@ -1501,8 +1448,6 @@ public final class MsgMahjong {
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @param values The cards to add.
-       * @return This builder for chaining.
        */
       public Builder addAllCards(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -1514,11 +1459,10 @@ public final class MsgMahjong {
       }
       /**
        * <code>repeated int32 cards = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCards() {
         cards_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1602,10 +1546,18 @@ public final class MsgMahjong {
       "\020\000\022\t\n\005SOUTH\020\001\022\010\n\004WEST\020\002\022\t\n\005NORTH\020\003b\006prot" +
       "o3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_com_sean_games_mahjong_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_sean_games_mahjong_Message_fieldAccessorTable = new
